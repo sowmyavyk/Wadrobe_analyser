@@ -1,0 +1,13 @@
+image_path,type,name,description,length,gender,Color
+path/to/dataset/images/Red Pant.jpeg,Pant,Red Pant,"Red 3/4th pant, vibrant and stylish, perfect for casual outings or active wear, offering comfort and a trendy look.",Medium,Female,Red
+path/to/dataset/images/Blue Jeans.jpeg,Pant,Blue Jeans,"High-waist blue fit jeans, designed for a flattering silhouette, combining comfort with a classic, versatile style for any occasion.",Long,Female,Blue
+path/to/dataset/images/DenimShirt.jpeg,Shirt,Denim shirt,"""Blue denim shirt with full hand sleeves, featuring a classic collar, perfect for office wear or any other occasions, versatile and stylish.""",Long,Female,Blue
+path/to/dataset/images/Black Tshirt.jpg,TShirt,Black Tshirt,"Black cotton T-shirt with regular sleeves, perfect for casual wear.",Medium,Female,Black
+path/to/dataset/images/Beige shirt.jpeg,Shirt,Beige shirt,"Beige collared shirt with full sleeves and button detailing, offering a casual yet refined look for everyday wear",Medium,Female,Black
+path/to/dataset/images/Orange pants.jpeg,pant,Orange pant,"High-waisted, full-length cotton flare pants in vibrant orange, adding a stylish flair and comfort to any outfit ensemble.",Long,Female,Orange
+path/to/dataset/images/Straight jeans.jpg,pant,Straight Pants,"Long, straight-cut beige office pants, tailored for a professional look, ideal for office settings with a classic style.",Long,Female,Beige
+path/to/dataset/images/Yellow dress.jpg,dress,Yellow dress,"Full-length mustard yellow halter-neck dress, shoulder-baring with a floral accent, combining elegance and a touch of floral charm.",Long,Female,mustard yellow
+path/to/dataset/images/Black flare pants.jpg,pant,BLack flare pants,"Black baggy flare pants crafted from cotton with a denim-inspired touch, offering comfort and a stylish, relaxed fit.",Long,Female,black
+path/to/dataset/images/Blue baggy jeans.jpg,pant,Blue baggy jeans,"High-waisted, full-length baggy jeans in a classic blue color, offering a relaxed fit and timeless denim style.",Long,Female,Blue
+path/to/dataset/images/White dress.jpg,dress,White dress,"Full-length Indian-style frock dress with full sleeves, embodying traditional elegance and grace in its design.",Long,Female,white
+path/to/dataset/images/Short pink top.jpg,top,short pink top,"Traditional short pink top with full sleeves, adorned with shiny accents for a vibrant and cultural look.",Short,Female,Pink
