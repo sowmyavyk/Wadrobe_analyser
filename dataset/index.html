@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing and Home Decor Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .options {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .option {
+      cursor: pointer;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      width: 45%;
+      box-sizing: border-box;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .option:hover {
+      background-color: #f0f0f0;
+    }
+    .option img {
+      max-width: 100%;
+      height: auto;
+    }
+    .option h2 {
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    .preferences {
+      display: none;
+      margin-top: 50px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .btn-next {
+      background-color: dodgerblue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-next:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+    .page {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .customization-option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .customization-option img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .customization-option img:hover {
+      transform: scale(1.1);
+    }
+    .customization-option img.selected {
+      border: 2px solid dodgerblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="page1" class="page">
+    <div class="container">
+      <h1>Welcome to Clothing and Home Decor Selection</h1>
+      <div class="options">
+        <div class="option" id="clothingOption">
+          <img src="clothing_image.jpg" alt="Clothing Image">
+          <h2>CLOTHING</h2>
+        </div>
+        <div class="option" id="homeDecorOption">
+          <img src="home_decor_image.jpg" alt="Home Decor Image">
+          <h2>HOME DECOR</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page2" class="page hidden">
+    <div class="container preferences">
+      <h2>Select Your Preferences</h2>
+      <div class="question">
+        <p>Comfort:</p>
+        <div class="customization-option" id="comfortOptions">
+          <img src="Wadrobe_analyser/home_decor_image.jpg" alt="Open Comfort" data-value="open">
+          <img src="modest_comfort.jpg" alt="Modest Comfort" data-value="modest">
+        </div>
+      </div>
+      <div class="question">
+        <p>Length of the Top:</p>
+        <div class="customization-option" id="lengthOptions">
+          <img src="short_length.jpg" alt="Short" data-value="short">
+          <img src="medium_length.jpg" alt="Medium" data-value="medium">
+          <img src="long_length.jpg" alt="Long" data-value="long">
+        </div>
+      </div>
+      <div class="question">
+        <p>Shoulder Type:</p>
+        <div class="customization-option" id="shoulderOptions">
+          <img src="off_shoulder.jpg" alt="Off Shoulder" data-value="off_shoulder">
+          <img src="shoulders.jpg" alt="Shoulders" data-value="shoulders">
+        </div>
+      </div>
+      <button class="btn-next" onclick="submitPreferences()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the next page with smooth scrolling
+    function scrollToNextPage() {
+      const nextPage = document.getElementById('page2');
+      nextPage.classList.remove('hidden');
+      nextPage.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Function to handle option selection and navigate to preferences
+    function handleOptionSelection() {
+      const clothingOption = document.getElementById('clothingOption');
+      const homeDecorOption = document.getElementById('homeDecorOption');
+
+      clothingOption.addEventListener('click', function() {
+        scrollToNextPage();
+        console.log('Clothing option clicked');
+      });
+
+      homeDecorOption.addEventListener('click', function() {
+        scrollToNextPage();
+        console.log('Home Decor option clicked');
+      });
+    }
+
+    // Initialize event listeners
+    document.addEventListener('DOMContentLoaded', handleOptionSelection);
+
+    // Function to handle customization option selection
+    function handleCustomizationOptionSelection() {
+      const customizationOptions = document.querySelectorAll('.customization-option img');
+
+      customizationOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Deselect all options within the same question
+          const parent = this.parentElement;
+          parent.querySelectorAll('img').forEach(img => img.classList.remove('selected'));
+          // Select the clicked option
+          this.classList.add('selected');
+          console.log(`${this.alt} selected`);
+        });
+      });
+    }
+
+    // Initialize customization option event listeners
+    document.addEventListener('DOMContentLoaded', handleCustomizationOptionSelection);
+
+    // Function to handle the next button click after preferences selection
+    function submitPreferences() {
+      // Collect selected preferences
+      const comfort = document.querySelector('#comfortOptions img.selected')?.dataset.value;
+      const length = document.querySelector('#lengthOptions img.selected')?.dataset.value;
+      const shoulder = document.querySelector('#shoulderOptions img.selected')?.dataset.value;
+
+      console.log(`Selected Preferences - Comfort: ${comfort}, Length: ${length}, Shoulder: ${shoulder}`);
+
+      // You can now use the collected preferences to proceed further
+    }
+  </script>
+</body>
+</html>
